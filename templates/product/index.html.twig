@@ -5,10 +5,9 @@
 {% block body %}
     <div class="flex justify-between items-center mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-gray-800">Gestion de Stock</h1>
-            <p class="text-gray-500">Liste des articles référencés dans l'ERP</p>
+            <h1 class="text-3xl font-bold text-gray-800 ml-8">Gestion de Stock</h1>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 mt-8">
     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
         <p class="text-sm font-medium text-gray-500 uppercase">Produits</p>
         <p class="text-2xl font-bold text-indigo-600">{{ products|length }}</p>
@@ -30,7 +29,7 @@
         </p>
     </div>
 </div>
-        <a href="{{ path('app_product_new') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-sm flex items-center gap-2">
+        <a href="{{ path('app_product_new') }}" class="bg-indigo-600 mr-8 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-sm flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
             </svg>
