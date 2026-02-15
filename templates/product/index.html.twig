@@ -23,6 +23,7 @@
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">ID</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Désignation</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Prix Unitaire</th>
+                   <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Catégorie</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Niveau de Stock</th>
                     <th class="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">Actions</th>
                 </tr>
@@ -33,6 +34,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">#{{ product.id }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">{{ product.name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">{{ product.price|number_format(2, ',', ' ') }} €</td>
+                       <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">{{ product.category.name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-center">
                         {% if product.stock <= 0 %}
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800">
