@@ -2,8 +2,13 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+
+
+
+
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -13,12 +18,17 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
+
+    #[Assert\NotBlank(message: "Le nom du produit est obligatoire")]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[Assert\Positive(message: "Le prix doit être un nombre supérieur à 0")]
     #[ORM\Column]
     private ?float $price = null;
 
+
+    #[Assert\GreaterThanOrEqual(0, message: "Le stock ne peut pas être négatif")]
     #[ORM\Column]
     private ?int $stock = null;
 
@@ -32,7 +42,7 @@ class Product
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(?string $name): static
     {
         $this->name = $name;
 
@@ -44,7 +54,7 @@ class Product
         return $this->price;
     }
 
-    public function setPrice(float $price): static
+    public function setPrice(?float $price): static
     {
         $this->price = $price;
 
